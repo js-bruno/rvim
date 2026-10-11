@@ -20,6 +20,10 @@ return {
         capabilities = capabilities,
       })
 
+      vim.lsp.config('markdown', {
+        capabilities = capabilities,
+      })
+
       vim.lsp.config('html', {
         capabilities = capabilities,
         init_options = {

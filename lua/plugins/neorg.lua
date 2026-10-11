@@ -2,7 +2,7 @@ return {
 	"nvim-neorg/neorg",
 	run = ":Neorg sync-parsers", -- This is the important bit!
   lazy = false,
-  tag = "v7.0.0",
+  branch = "main",
 	config = function()
 		-- vim.keymap.set("n", "<leader>nn", ":Neorg keybind norg core.dirman.new.note<cr>", {})
 		vim.keymap.set("n", "<leader>ni", ":Neorg index<cr>", {})

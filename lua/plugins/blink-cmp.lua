@@ -1,20 +1,16 @@
 return {
   'saghen/blink.cmp',
-  -- dependencies = 'rafamadriz/friendly-snippets',
   dependencies = {
     'L3MON4D3/LuaSnip',
-    "rafamadriz/friendly-snippets",
-  }, signature = { enabled = true },
+    'rafamadriz/friendly-snippets',
+  },
   version = '*',
-  ---
-  ---@module 'blink.cmp'cmp
-  ---@type blink.cmp.Config
   opts = {
+    snippets = { preset = 'luasnip' },
+    signature = { enabled = true },
     completion = {
-      ghost_text = {enabled = true },
-      menu = {
-        auto_show = false
-      },
+      ghost_text = { enabled = true },
+      menu = { auto_show = false },
     },
     keymap = {
       preset = 'super-tab',
@@ -25,34 +21,14 @@ return {
     },
     appearance = {
       use_nvim_cmp_as_default = true,
-      nerd_font_variant = 'mono'
+      nerd_font_variant = 'mono',
     },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
-        path = {
-          opts = { get_cwd = vim.uv.cwd },
-        },
-        luasnip = {
-          name = "luasnip",
-          enabled = true,
-          module = "blink.cmp.sources.lsp",
-          score_offset = 950
-        },
-        snippets = {
-          opts = {
-            search_paths = { "~/.config/nvim/lua/snippets/" },
-          },
-        }
-        -- buffer = {
-        --   fallback_for = {}, -- disable being fallback for LSP
-        --   max_items = 4,
-        --   min_keyword_length = 4,
-        --   score_offset = -3,
-        -- },
-      }
+        path = { opts = { get_cwd = vim.uv.cwd } },
+      },
     },
   },
-
-  opts_extend = { "sources.default" }
+  opts_extend = { 'sources.default' },
 }
